@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     IGCSE ICT (0417) - Chapter 21: Website authoring
+     Demo website for "Karoo Skies Stargazing Lodge"
+     Every section shows a concept you can be tested on.
+     Look for the CONCEPT comments throughout this file.
+     ============================================================ -->
+<html lang="en">
+
+<!-- ============================================================
+     CONCEPT: THE HEAD SECTION
+     Information ABOUT the page. It is not displayed in the
+     browser window (except the title, shown in the browser tab).
+     ============================================================ -->
+<head>
+  <!-- Character set: UTF-8 lets the page display almost any character -->
+  <meta charset="UTF-8">
+
+  <!-- Viewport: makes the page scale correctly on phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta tags used by search engines -->
+  <meta name="description" content="Karoo Skies is a stargazing lodge offering guided night tours, telescope hire and astronomy courses.">
+  <meta name="keywords" content="stargazing, astronomy, telescope, Karoo, night sky, lodge">
+  <meta name="author" content="IGCSE ICT Candidate">
+
+  <!-- Page title: appears in the browser tab and in bookmarks -->
+  <title>Karoo Skies Stargazing Lodge</title>
+
+  <!-- CONCEPT: DEFAULT TARGET WINDOW
+       The base tag sets where ALL links open unless a link says otherwise.
+       _self  = same window/tab (the normal default)
+       _blank = a new window/tab
+       Change this to _blank and every link without its own target
+       will open in a new tab. -->
+  <base target="_self">
+
+  <!-- CONCEPT: ATTACHING AN EXTERNAL STYLESHEET
+       rel  = the relationship (a stylesheet)
+       href = a RELATIVE file path to the .css file -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CONCEPT: INTERNAL (EMBEDDED) STYLES
+       Written in the head of ONE page. Because it comes AFTER the
+       external stylesheet link, it overrides external rules with the
+       same selector. -->
+  <style>
+    .cascade-demo {
+      color: #2A7F80;    /* internal style beats the external colour */
+    }
+  </style>
+</head>
+
+<!-- ============================================================
+     CONCEPT: THE BODY SECTION
+     Everything the user sees in the browser window.
+     ============================================================ -->
+<body>
+
+  <!-- A bookmark (anchor) at the top so "Back to top" links work -->
+  <div id="top"></div>
+
+  <!-- ==========================================================
+       CONCEPT: TABLE USED FOR PAGE LAYOUT
+       Exam tasks often ask you to build the page structure with a
+       table. Widths are set as percentages so the layout resizes.
+       ========================================================== -->
+  <table class="layout">
+    <tr>
+      <td class="logo-cell">
+        <!-- Image used as a hyperlink back to the home page -->
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Karoo Skies logo: a telescope under the moon" width="120">
+        </a>
+      </td>
+      <td class="banner-cell">
+        <h1>Karoo Skies Stargazing Lodge</h1>
+        <p class="tagline">Some of the darkest skies in the Southern Hemisphere</p>
+      </td>
+    </tr>
+    <tr>
+      <!-- colspan merges two cells across -->
+      <td colspan="2" class="nav-cell">
+        <!-- CONCEPT: HYPERLINKS TO BOOKMARKS ON THE SAME PAGE
+             href="#id" jumps to the element with that id -->
+        <a href="#headings">Text</a> |
+        <a href="#lists">Lists</a> |
+        <a href="#tables">Tables</a> |
+        <a href="#images">Images</a> |
+        <a href="#media">Video &amp; audio</a> |
+        <a href="#links">Hyperlinks</a> |
+        <a href="#styles">Styles</a> |
+        <a href="#exam">Exam task</a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ==========================================================
+       SECTION 1: HEADINGS, PARAGRAPHS AND TEXT
+       ========================================================== -->
+  <div class="section" id="headings">
+    <h2>1. Headings, paragraphs and text</h2>
+
+    <p>Welcome to Karoo Skies. Our lodge sits far from city lights, so on a clear night
+       you can see the Milky Way with <strong>no telescope at all</strong>. Bring warm
+       clothes: desert nights are <em>cold</em>.</p>
+
+    <!-- The br tag forces a line break inside a paragraph -->
+    <p>Reception opens daily at 16:00.<br>
+       Night tours start at 20:30.</p>
+
+    <!-- CONCEPT: HEADING STYLES h1 to h6
+         h1 is the most important, h6 the least. Each can be styled in CSS. -->
+    <h1>Heading 1 (h1): page title</h1>
+    <h2>Heading 2 (h2): section title</h2>
+    <h3>Heading 3 (h3): sub-heading</h3>
+    <h4>Heading 4 (h4)</h4>
+    <h5>Heading 5 (h5)</h5>
+    <h6>Heading 6 (h6)</h6>
+
+    <div class="exam-note">
+      <p><strong>Exam note:</strong> use <code>&lt;strong&gt;</code> or <code>&lt;b&gt;</code> for bold
+         and <code>&lt;em&gt;</code> or <code>&lt;i&gt;</code> for italic. Paragraphs use
+         <code>&lt;p&gt;</code>. Headings should be used in order, not chosen for their size.</p>
+    </div>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 2: LISTS
+       ========================================================== -->
+  <div class="section" id="lists">
+    <h2>2. Ordered and unordered lists</h2>
+
+    <h3>How to book a night tour (ordered list)</h3>
+    <!-- ol = ordered list: numbered, because the order matters -->
+    <ol>
+      <li>Choose a date from our calendar.</li>
+      <li>Select the number of guests.</li>
+      <li>Pay the deposit online.</li>
+      <li>Arrive at reception by 20:00.</li>
+    </ol>
+
+    <h3>What to bring (unordered list)</h3>
+    <!-- ul = unordered list: bullet points, because order does not matter -->
+    <ul>
+      <li>A warm jacket</li>
+      <li>A red-light torch
+        <!-- A nested list inside a list item -->
+        <ul>
+          <li>Red light protects your night vision</li>
+        </ul>
+      </li>
+      <li>A flask of hot chocolate</li>
+    </ul>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 3: TABLES
+       ========================================================== -->
+  <div class="section" id="tables">
+    <h2>3. Tables</h2>
+    <p>Tables show data in rows and columns. This one shows our tour prices.</p>
+
+    <!-- CONCEPT: TABLE STRUCTURE
+         table = the table     tr = a table row
+         th    = header cell   td = data cell
+         colspan = merge cells ACROSS columns
+         rowspan = merge cells DOWN rows -->
+    <table class="data-table">
+      <caption>Tour prices (South African Rand)</caption>
+      <tr>
+        <th>Tour</th>
+        <th>Duration</th>
+        <th>Adult</th>
+        <th>Child</th>
+      </tr>
+      <tr>
+        <td>Naked-eye sky tour</td>
+        <!-- rowspan="2": this cell covers two rows -->
+        <td rowspan="2">1.5 hours</td>
+        <td>R250</td>
+        <td>R120</td>
+      </tr>
+      <tr>
+        <td>Planet spotting</td>
+        <td>R300</td>
+        <td>R150</td>
+      </tr>
+      <tr>
+        <td>Deep-sky telescope session</td>
+        <td>3 hours</td>
+        <!-- colspan="2": this cell covers two columns -->
+        <td colspan="2" class="centred">R450 (all ages)</td>
+      </tr>
+    </table>
+
+    <div class="exam-note">
+      <p><strong>Exam note:</strong> table widths can be set in <em>pixels</em> (fixed size)
+         or as a <em>percentage</em> of the window (resizes with the screen). Borders,
+         padding and spacing are best set in the stylesheet; look for the
+         <code>.data-table</code> rules in <code>styles.css</code>.</p>
+    </div>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 4: IMAGES
+       ========================================================== -->
+  <div class="section" id="images">
+    <h2>4. Images</h2>
+
+    <!-- CONCEPT: INSERTING AND RESIZING AN IMAGE
+         src    = relative path to the image file
+         alt    = text shown if the image fails to load, and read aloud
+                  by screen readers
+         width  = set ONLY the width (or only the height) and the browser
+                  keeps the aspect ratio, so the image is not distorted -->
+    <table class="layout image-row">
+      <tr>
+        <td>
+          <img src="images/logo.svg" alt="Telescope under the moon, original size" width="400">
+          <p class="caption">width="400" (original size)</p>
+        </td>
+        <td>
+          <img src="images/logo.svg" alt="Telescope under the moon, resized" width="200">
+          <p class="caption">width="200": aspect ratio kept</p>
+        </td>
+        <td>
+          <!-- BAD PRACTICE shown on purpose: both width and height changed
+               by different amounts, so the image is stretched -->
+          <img src="images/logo.svg" alt="Telescope under the moon, distorted" width="200" height="60" class="distorted">
+          <p class="caption">width="200" height="60": distorted</p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="exam-note">
+      <p><strong>Exam note:</strong> if asked to "resize the image to 200 pixels wide,
+         maintaining its aspect ratio", set the width only. Resizing an image in HTML
+         does not change its file size; for faster loading, resize it in an image
+         editor before uploading.</p>
+    </div>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 5: VIDEO AND AUDIO
+       ========================================================== -->
+  <div class="section" id="media">
+    <h2>5. Video and audio</h2>
+    <p>Place your own files named <code>night-sky.mp4</code> and <code>crickets.mp3</code>
+       in the <code>media</code> folder to see these players working.</p>
+
+    <!-- CONCEPT: VIDEO
+         controls = shows play/pause/volume buttons
+         width    = size of the player
+         autoplay, muted and loop are optional attributes:
+           autoplay = starts playing automatically (most browsers need muted too)
+           loop     = starts again when it reaches the end
+         The text inside the tag shows only if the browser cannot play the video -->
+    <h3>Video</h3>
+    <video width="400" controls>
+      <source src="media/night-sky.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- CONCEPT: AUDIO
+         Works the same way as video. -->
+    <h3>Audio</h3>
+    <audio controls loop>
+      <source src="media/crickets.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
+
+    <div class="exam-note">
+      <p><strong>Exam note:</strong> always include the <code>controls</code> attribute
+         unless told otherwise, so the user can stop the media. Common formats:
+         MP4 for video, MP3 for audio.</p>
+    </div>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 6: HYPERLINKS
+       ========================================================== -->
+  <div class="section" id="links">
+    <h2>6. Hyperlinks</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>Type of link</th>
+        <th>Example</th>
+        <th>Code used</th>
+      </tr>
+      <tr>
+        <td>Bookmark on the same page</td>
+        <td><a href="#tables">Jump to the prices table</a></td>
+        <td><code>&lt;a href="#tables"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Another page on this website (relative path)</td>
+        <td><a href="page2.html">Our accommodation</a></td>
+        <td><code>&lt;a href="page2.html"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>A bookmark on another page</td>
+        <td><a href="page2.html#rooms">Room types on page 2</a></td>
+        <td><code>&lt;a href="page2.html#rooms"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>External website in a NEW window/tab</td>
+        <td><a href="https://www.cambridgeinternational.org" target="_blank">Cambridge International</a></td>
+        <td><code>&lt;a href="https://..." target="_blank"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>External website in the SAME window</td>
+        <td><a href="https://www.saao.ac.za" target="_self">SA Astronomical Observatory</a></td>
+        <td><code>&lt;a href="https://..." target="_self"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Open in a NAMED window</td>
+        <td><a href="page2.html" target="lodgeinfo">Open page 2 in a window called "lodgeinfo"</a></td>
+        <td><code>&lt;a href="page2.html" target="lodgeinfo"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Send an email (with a subject line)</td>
+        <td><a href="mailto:bookings@karooskies.example?subject=Tour%20booking">Email our bookings team</a></td>
+        <td><code>&lt;a href="mailto:bookings@...?subject=Tour%20booking"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Image as a link</td>
+        <td><a href="index.html"><img src="images/logo.svg" alt="Home" width="60"></a></td>
+        <td><code>&lt;a href="index.html"&gt;&lt;img ...&gt;&lt;/a&gt;</code></td>
+      </tr>
+    </table>
+
+    <div class="exam-note">
+      <p><strong>Exam note:</strong> a named window (for example <code>target="lodgeinfo"</code>)
+         opens a new window the first time. Every later link with the same target name
+         reuses that window instead of opening another one. In an email link, spaces
+         in the subject are written as <code>%20</code>.</p>
+    </div>
+
+    <h3>Relative and absolute file paths</h3>
+    <p>A <strong>relative path</strong> such as <code>images/logo.svg</code> describes where a
+       file is <em>from the current page</em>. An <strong>absolute path</strong> such as
+       <code>C:\Users\Sam\Website\images\logo.svg</code> or a full web address gives the
+       complete location.</p>
+    <p>Always use relative paths for files inside your own website. An absolute path
+       to your own hard drive will not exist on the web server or on anyone else's
+       computer, so the image or link will break when the site is uploaded.</p>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 7: STYLES AND THE CASCADE
+       ========================================================== -->
+  <div class="section" id="styles">
+    <h2>7. Styles: external, internal and inline</h2>
+
+    <p>A web page has three layers:</p>
+    <ul>
+      <li><strong>Content layer</strong>: the HTML that structures the page (text, tables, images, links).</li>
+      <li><strong>Presentation layer</strong>: the CSS that controls how it looks (colours, fonts, spacing).</li>
+      <li><strong>Behaviour layer</strong>: scripts such as JavaScript that make it interactive.</li>
+    </ul>
+
+    <h3>The cascade in action</h3>
+    <p>All three paragraphs below use the same class. Each one has been overridden by a
+       different kind of style.</p>
+
+    <!-- Uses only the external stylesheet colour (dark gold/brown) -->
+    <p class="cascade-demo-external">1. External stylesheet only: the colour comes from styles.css.</p>
+
+    <!-- The internal style in the head overrides the external one -->
+    <p class="cascade-demo">2. Internal style: the style tag in the head overrides the external file.</p>
+
+    <!-- CONCEPT: INLINE STYLE
+         Written inside the tag itself. It has the HIGHEST priority, so it
+         beats both internal and external styles. -->
+    <p class="cascade-demo" style="color: #B23A48;">3. Inline style: the style attribute beats everything else.</p>
+
+    <table class="data-table">
+      <tr>
+        <th>Type of style</th>
+        <th>Where it is written</th>
+        <th>Priority</th>
+      </tr>
+      <tr>
+        <td>Inline</td>
+        <td>Inside the HTML tag using <code>style="..."</code></td>
+        <td>Highest</td>
+      </tr>
+      <tr>
+        <td>Internal (embedded)</td>
+        <td>In a <code>&lt;style&gt;</code> tag in the head section</td>
+        <td>Middle (when placed after the link to the external file)</td>
+      </tr>
+      <tr>
+        <td>External</td>
+        <td>In a separate <code>.css</code> file attached with <code>&lt;link&gt;</code></td>
+        <td>Lowest</td>
+      </tr>
+    </table>
+
+    <div class="exam-note">
+      <p><strong>Why use an external stylesheet?</strong> One file controls every page, so
+         the whole website has a consistent look. A change made once in the stylesheet
+         updates every page, and the HTML files stay smaller and easier to read.</p>
+    </div>
+
+    <h3>Classes and IDs</h3>
+    <!-- A class can be used on MANY elements; an id must be UNIQUE on the page -->
+    <p class="highlight">This paragraph uses the class <code>.highlight</code>, which could be reused many times.</p>
+    <p id="special-offer">This paragraph uses the id <code>#special-offer</code>, which appears only once on the page.</p>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 8: PAST-PAPER STYLE TASK
+       An original practice task written in the style of the
+       practical exam, followed by the model answer.
+       ========================================================== -->
+  <div class="section" id="exam">
+    <h2>8. Practice task (past-paper style)</h2>
+
+    <div class="task">
+      <p>You are going to edit a web page for Karoo Skies.</p>
+      <ol>
+        <li>Open the file <code>tours.html</code> in a text editor.</li>
+        <li>Place the text <em>Karoo Skies Tours</em> so that it is displayed in the browser tab.</li>
+        <li>Attach the stylesheet <code>ks_style.css</code> to the web page.</li>
+        <li>Set the default target window to <code>_blank</code>.</li>
+        <li>Create a table with 3 rows and 2 columns. Merge the two cells in the top row.
+            Set the table width to 80% of the window.</li>
+        <li>Place the image <code>ks_logo.jpg</code> in the top row. Resize it to 150 pixels
+            wide, maintaining the aspect ratio.</li>
+        <li>Make the text <em>Contact us</em> a hyperlink that sends an email to
+            <code>info@karooskies.example</code> with the subject <em>Tour enquiry</em>.</li>
+        <li>Make the image a hyperlink to <code>https://www.saao.ac.za</code> that opens in
+            a new window called <code>_skies</code>.</li>
+      </ol>
+    </div>
+
+    <h3>Model answer</h3>
+<pre class="code-box">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Karoo Skies Tours&lt;/title&gt;
+  &lt;link rel="stylesheet" href="ks_style.css"&gt;
+  &lt;base target="_blank"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table style="width: 80%;"&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;
+        &lt;a href="https://www.saao.ac.za" target="_skies"&gt;
+          &lt;img src="ks_logo.jpg" alt="Karoo Skies logo" width="150"&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="mailto:info@karooskies.example?subject=Tour%20enquiry"&gt;Contact us&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+    <div class="exam-note">
+      <p><strong>Common mistakes that lose marks:</strong> using an absolute path to the
+         image or stylesheet; setting both width and height so the image distorts;
+         forgetting the <code>alt</code> attribute; misspelling a target name
+         (<code>_skies</code> is not the same as <code>skies</code>); and placing the
+         title or stylesheet link in the body instead of the head.</p>
+    </div>
+
+    <p class="top-link"><a href="#top">Back to top</a></p>
+  </div>
+
+  <!-- Footer: a simple div with a class -->
+  <div class="footer">
+    <p>Karoo Skies Stargazing Lodge (a fictional business for revision purposes)<br>
+       Last updated by: IGCSE ICT Candidate</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* ============================================================
+   IGCSE ICT (0417) - Chapter 21: Website authoring
+   External stylesheet: styles.css
+   Attached to every page with:
+   <link rel="stylesheet" href="styles.css">
+
+   CONCEPT: CSS SYNTAX
+   selector {
+     property: value;
+   }
+   Comments like this one are ignored by the browser.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   CONCEPT: STYLING THE WHOLE PAGE (body selector)
+   - Background colour AND a background image
+   - Font family with a GENERIC FALLBACK at the end
+   ------------------------------------------------------------ */
+body {
+  background-color: #14213D;                /* shown if the image fails to load */
+  background-image: url("images/sky.svg");  /* relative path to the image */
+  background-repeat: repeat;                /* tile the image (no-repeat, repeat-x, repeat-y) */
+  background-position: left top;
+  font-family: Verdana, Tahoma, sans-serif; /* if Verdana is missing, try Tahoma, then any sans-serif */
+  font-size: 16px;
+  color: #1F2430;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: STYLING HEADINGS h1 - h6
+   Serif font for headings, with generic fallback "serif"
+   ------------------------------------------------------------ */
+h1 {
+  font-family: Georgia, "Times New Roman", serif; /* names with spaces need quotes */
+  font-size: 32px;
+  color: #14213D;
+  margin-top: 0;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  color: #14213D;
+  border-bottom: 3px solid #F2B134;   /* width, style, colour */
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #22345C;
+}
+
+h4 {
+  font-size: 18px;
+  color: #22345C;
+}
+
+h5 {
+  font-size: 16px;
+  font-style: italic;
+  color: #22345C;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #22345C;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: PARAGRAPHS AND LISTS
+   ------------------------------------------------------------ */
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;     /* left, right, center or justify */
+}
+
+ol {
+  list-style-type: decimal;   /* 1, 2, 3 ... (try upper-roman or lower-alpha) */
+}
+
+ul {
+  list-style-type: disc;      /* filled bullet (try circle or square) */
+}
+
+ul ul {
+  list-style-type: circle;    /* nested lists get a different bullet */
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: HYPERLINK STYLES
+   The four link states must be written in this order:
+   link, visited, hover, active
+   ------------------------------------------------------------ */
+a:link {
+  color: #22345C;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #5B4B8A;
+}
+
+a:hover {
+  color: #B23A48;
+  text-decoration: none;
+}
+
+a:active {
+  color: #F2B134;
+}
+
+a:focus {
+  outline: 3px solid #F2B134;   /* visible outline for keyboard users */
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: LAYOUT TABLE (header and navigation)
+   Width as a PERCENTAGE so it resizes with the window
+   ------------------------------------------------------------ */
+table.layout {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.logo-cell {
+  width: 15%;
+  background-color: #14213D;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.banner-cell {
+  width: 85%;
+  background-color: #F2B134;
+  padding: 10px 20px;
+  vertical-align: middle;
+}
+
+.banner-cell h1 {
+  color: #14213D;
+  margin-bottom: 0;
+}
+
+.tagline {
+  font-style: italic;
+  margin-top: 0;
+}
+
+.nav-cell {
+  background-color: #22345C;
+  color: #E9EEF5;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Links inside the navigation bar only */
+.nav-cell a:link,
+.nav-cell a:visited {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-cell a:hover {
+  color: #F2B134;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: CLASSES
+   A class starts with a full stop (.) in CSS and can be used on
+   as many elements as you like: class="section"
+   ------------------------------------------------------------ */
+.section {
+  background-color: #F7F9FC;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;   /* top, right, bottom, left: auto centres the box */
+  padding: 20px 30px;
+  border-left: 8px solid #F2B134;
+}
+
+.exam-note {
+  background-color: #E3F1F1;
+  border: 2px dashed #2A7F80;
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+
+.task {
+  background-color: #FFFFFF;
+  border: 2px solid #14213D;
+  padding: 10px 20px;
+}
+
+.highlight {
+  background-color: #FFF1CC;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.centred {
+  text-align: center;
+}
+
+.top-link {
+  text-align: right;
+  font-size: 14px;
+}
+
+.caption {
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
+
+.footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background-color: #22345C;
+  color: #E9EEF5;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: IDs
+   An id starts with a hash (#) in CSS and must be UNIQUE on a page:
+   id="special-offer"
+   ------------------------------------------------------------ */
+#special-offer {
+  color: #FFFFFF;
+  background-color: #2A7F80;
+  padding: 8px;
+  text-align: center;
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: DATA TABLE STYLES
+   - border: width, style, colour
+   - border-collapse: joins double borders into single lines
+   - padding: space INSIDE each cell
+   - border-spacing: space BETWEEN cells (only works when
+     border-collapse is "separate")
+   ------------------------------------------------------------ */
+table.data-table {
+  width: 90%;                 /* percentage width */
+  border-collapse: collapse;
+  border: 2px solid #14213D;
+  margin: 15px 0;
+  background-color: #FFFFFF;
+}
+
+.data-table caption {
+  font-weight: bold;
+  padding: 6px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #14213D;
+  color: #FFFFFF;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #14213D;
+}
+
+.data-table td {
+  padding: 8px;
+  border: 1px solid #9AA5B8;
+  vertical-align: top;         /* top, middle or bottom */
+}
+
+
+/* ------------------------------------------------------------
+   IMAGES
+   ------------------------------------------------------------ */
+img {
+  border: 0;
+  max-width: 100%;   /* stops large images spilling off small screens */
+}
+
+.image-row td {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 10px;
+}
+
+/* The distorted example needs its HTML height kept, so it is
+   not changed by max-width */
+img.distorted {
+  max-width: none;
+}
+
+
+/* ------------------------------------------------------------
+   CODE EXAMPLES
+   ------------------------------------------------------------ */
+code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #E9EEF5;
+  padding: 1px 4px;
+}
+
+.code-box {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  background-color: #14213D;
+  color: #E9EEF5;
+  padding: 15px;
+  overflow-x: auto;    /* scrolls sideways instead of breaking the layout */
+}
+
+
+/* ------------------------------------------------------------
+   CONCEPT: THE CASCADE
+   Both classes are coloured here in the EXTERNAL stylesheet.
+   .cascade-demo is then overridden by the internal style in the
+   head of index.html, and by an inline style on one paragraph.
+   ------------------------------------------------------------ */
+.cascade-demo-external,
+.cascade-demo {
+  color: #8A5A00;
+  font-weight: bold;
+}
+
+
+/* ------------------------------------------------------------
+   SMALL SCREENS (beyond the syllabus, but good practice)
+   ------------------------------------------------------------ */
+@media (max-width: 600px) {
+  body {
+    padding: 8px;
+  }
+
+  .section {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .image-row td {
+    display: block;
+  }
+}

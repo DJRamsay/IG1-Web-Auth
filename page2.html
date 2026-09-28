@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Second page: shows that ONE external stylesheet styles EVERY page,
+     and gives the local hyperlinks on index.html somewhere to go. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accommodation at Karoo Skies Stargazing Lodge.">
+  <meta name="author" content="IGCSE ICT Candidate">
+  <title>Accommodation | Karoo Skies</title>
+  <!-- The SAME stylesheet as index.html, so both pages look consistent -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="section">
+    <h1>Accommodation</h1>
+    <p>This page uses the same external stylesheet as the home page, so the fonts,
+       colours and spacing match without being written again.</p>
+    <p><a href="index.html">Back to the home page</a></p>
+  </div>
+
+  <!-- This id is the bookmark target for the link "page2.html#rooms" -->
+  <div class="section" id="rooms">
+    <h2>Room types</h2>
+    <table class="data-table">
+      <tr>
+        <th>Room</th>
+        <th>Sleeps</th>
+        <th>Price per night</th>
+      </tr>
+      <tr>
+        <td>Dome room with sky window</td>
+        <td>2</td>
+        <td>R1 400</td>
+      </tr>
+      <tr>
+        <td>Family cottage</td>
+        <td>5</td>
+        <td>R2 300</td>
+      </tr>
+    </table>
+    <p><a href="index.html#links">Back to the hyperlinks section</a></p>
+  </div>
+
+</body>
+</html>
